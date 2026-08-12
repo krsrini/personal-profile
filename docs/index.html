@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Srinivasan (KRS) Ramarao - Data, AI & Visual Stories</title>
+    <meta
+      name="description"
+      content="Data engineer, analytics leader, GenAI explorer, visual storyteller, hiker, filmmaker, nature explorer, and dog lover."
+    />
+    <meta property="og:title" content="Srinivasan (KRS) Ramarao - Data, AI & Visual Stories" />
+    <meta
+      property="og:description"
+      content="Portfolio of Srinivasan (KRS) Ramarao: data, analytics, GenAI, storytelling, hiking, filmmaking, dogs, and nature."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./og.png" />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,570;9..40,620;9..40,700;9..40,800&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #191818;
+        --paper: #f4f1e9;
+        --muted: #706e68;
+        --line: rgba(25, 24, 24, 0.18);
+        --acid: #d7ff43;
+        --violet: #7258e8;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "DM Sans", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      .shell { width: min(1360px, calc(100% - 64px)); margin: 0 auto; }
+
+      .nav {
+        height: 100px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+      }
+      .monogram { font-weight: 800; font-size: 20px; }
+      .dot { color: var(--violet); }
+      .navLinks { display: flex; gap: 36px; }
+      .navLinks a { position: relative; }
+      .navLinks a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: -5px;
+        height: 1px;
+        background: var(--ink);
+        transition: right .25s ease;
+      }
+      .navLinks a:hover::after { right: 0; }
+      .availability { justify-self: end; display: flex; align-items: center; gap: 8px; }
+      .statusDot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #42b65e;
+        box-shadow: 0 0 0 5px rgba(66, 182, 94, .1);
+      }
+
+      .hero {
+        padding: 106px 0 36px;
+        min-height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+      }
+      .eyebrow, .sectionHeader, .sectionLabel, .footerKicker {
+        text-transform: uppercase;
+        letter-spacing: .16em;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .hero h1 {
+        margin: 36px 0 48px;
+        font-size: clamp(72px, 10.4vw, 156px);
+        line-height: .82;
+        font-weight: 570;
+        max-width: 1280px;
+      }
+      .italicLine {
+        display: block;
+        margin-left: 13%;
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--violet);
+      }
+      .heroBottom {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+      }
+      .introWithPhoto { display: flex; align-items: center; gap: 24px; }
+      .introWithPhoto img {
+        width: 92px;
+        height: 92px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 0 8px rgba(114, 88, 232, .1);
+      }
+      .heroBottom p { max-width: 550px; font-size: 17px; line-height: 1.6; margin: 0; color: #41403d; }
+      .roundLink {
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-size: 12px;
+        line-height: 1.25;
+        transition: transform .3s ease, background .3s ease;
+      }
+      .roundLink span { position: absolute; right: 23px; bottom: 23px; font-size: 16px; }
+      .roundLink:hover { transform: rotate(-6deg) scale(1.04); background: var(--violet); }
+      .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
+
+      .work, .capabilities, .career { padding: 108px 0 126px; }
+      .sectionHeader { display: flex; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
+      .sectionCount { color: var(--muted); }
+      .careerIntro, .beyondLead {
+        display: grid;
+        grid-template-columns: 1.4fr .7fr;
+        gap: 80px;
+        padding: 72px 0 78px;
+        align-items: end;
+      }
+      .careerIntro h2, .beyondLead h2 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-size: clamp(52px, 6vw, 88px);
+        line-height: .94;
+        margin: 0;
+      }
+      .careerIntro p, .beyondLead p { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0; max-width: 470px; }
+      .careerStats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--line);
+      }
+      .careerStats div {
+        padding: 35px 20px 34px 0;
+        border-right: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .careerStats div:not(:first-child) { padding-left: 28px; }
+      .careerStats div:last-child { border-right: 0; }
+      .careerStats strong { font-family: "Instrument Serif", serif; font-size: 52px; font-weight: 400; line-height: 1; color: var(--violet); }
+      .careerStats span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+      .timeline { padding-top: 45px; }
+      .timeline article {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        padding: 26px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .timeline article > span { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+      .timeline h3 { margin: 0 0 7px; font-size: 20px; }
+      .timeline p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+      .careerLinks { display: flex; gap: 12px; margin-top: 34px; }
+      .careerLinks a {
+        border: 1px solid var(--ink);
+        padding: 13px 17px;
+        border-radius: 999px;
+        font-size: 12px;
+        display: flex;
+        gap: 18px;
+        transition: background .2s, color .2s;
+      }
+      .careerLinks a:hover { background: var(--ink); color: white; }
+
+      .projectGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+      .projectCard {
+        min-height: 610px;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+      .violet { background: #cbc3ff; }
+      .coral { background: #ffac91; }
+      .lime { background: #d9f477; }
+      .cardTop { display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 700; }
+      .cardOrb { height: 245px; display: grid; place-items: center; }
+      .cardOrb div {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .28);
+        box-shadow: inset -18px -20px 45px rgba(0,0,0,.08), 12px 18px 50px rgba(55,35,20,.13);
+        transition: transform .45s cubic-bezier(.2,.8,.2,1);
+      }
+      .violet .cardOrb div { border-radius: 42% 58% 61% 39% / 50% 38% 62% 50%; }
+      .coral .cardOrb div { width: 176px; border-radius: 26px; transform: rotate(12deg); }
+      .lime .cardOrb div { width: 190px; height: 110px; border-radius: 55% 45% 48% 52%; }
+      .projectCard:hover .cardOrb div { transform: translateY(-9px) rotate(-5deg) scale(1.06); }
+      .projectCard h2 { font-size: 33px; line-height: 1.05; margin: auto 0 18px; max-width: 340px; font-weight: 620; }
+      .projectCard p { font-size: 14px; line-height: 1.55; max-width: 360px; margin: 0 0 28px; }
+      .tagRow { display: flex; flex-wrap: wrap; gap: 6px; }
+      .tagRow span { border: 1px solid rgba(25,24,24,.35); border-radius: 999px; padding: 7px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
+
+      .statement { background: var(--ink); color: var(--paper); }
+      .statementInner { padding: 110px 0 118px; }
+      .sectionLabel { color: #aaa69d; display: block; }
+      blockquote {
+        margin: 62px 0 100px;
+        max-width: 1200px;
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(54px, 7vw, 104px);
+        line-height: .97;
+      }
+      .principles { border-top: 1px solid rgba(255,255,255,.25); display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; }
+      .principles > div { padding-top: 24px; }
+      .principles span { color: #8d8981; font-size: 11px; }
+      .principles h3 { font-size: 19px; margin: 52px 0 12px; }
+      .principles p { color: #aaa69d; line-height: 1.6; font-size: 14px; max-width: 300px; }
+
+      .beyond { background: #203c36; color: #f3f0e8; }
+      .beyondInner { padding: 108px 0 124px; }
+      .lightHeader { border-color: rgba(255,255,255,.65); }
+      .lightHeader .sectionCount { color: rgba(255,255,255,.55); }
+      .beyondLead { grid-template-columns: 1.25fr .65fr; gap: 90px; }
+      .beyondLead p { color: rgba(255,255,255,.65); }
+      .hobbyGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+      .hobbyCard { min-height: 430px; border: 1px solid rgba(255,255,255,.25); padding: 20px; display: flex; flex-direction: column; overflow: hidden; }
+      .hobbyCard > div:first-child { display: flex; justify-content: space-between; font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: rgba(255,255,255,.6); }
+      .hobbyMark { height: 145px; width: 145px; margin: 38px auto 25px; background: var(--acid); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+      .hobbyCard:hover .hobbyMark { transform: rotate(8deg) scale(1.05); }
+      .mark01 { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+      .mark02 { border-radius: 50%; background: #ffac91; box-shadow: inset 0 0 0 32px #203c36; }
+      .mark03 { border-radius: 50% 50% 46% 54%; background: #cbc3ff; transform: rotate(-12deg); }
+      .mark04 { clip-path: polygon(50% 0, 92% 25%, 80% 75%, 50% 100%, 20% 75%, 8% 25%); background: #f5c74b; }
+      .hobbyCard h3 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 30px; margin: auto 0 10px; }
+      .hobbyCard p { margin: 0; color: rgba(255,255,255,.63); font-size: 13px; line-height: 1.55; }
+
+      .capabilityList { margin-top: 24px; }
+      .capability { display: grid; grid-template-columns: 80px 1fr 1fr; align-items: center; padding: 29px 4px; border-bottom: 1px solid var(--line); }
+      .capability > span { font-size: 10px; color: var(--muted); }
+      .capability h3 { font-family: "Instrument Serif", serif; font-size: 38px; font-weight: 400; margin: 0; }
+      .capability p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      footer { background: #7559e8; color: white; }
+      .footerInner { min-height: 690px; padding: 100px 0 34px; display: flex; flex-direction: column; }
+      .footerKicker { color: rgba(255,255,255,.62); }
+      footer h2 { font-size: clamp(70px, 10vw, 150px); line-height: .82; max-width: 1100px; margin: 82px 0 54px; font-weight: 560; }
+      footer h2 em { font-family: "Instrument Serif", serif; font-weight: 400; }
+      .contactLink { width: fit-content; border-bottom: 1px solid rgba(255,255,255,.55); padding: 12px 0; font-size: 18px; display: flex; gap: 42px; transition: gap .25s ease; }
+      .contactLink:hover { gap: 60px; }
+      .socialLinks { display: flex; gap: 26px; margin-top: 36px; flex-wrap: wrap; }
+      .socialLinks a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; color: rgba(255,255,255,.75); }
+      .socialLinks a:hover { color: white; }
+      .whatsappHandle { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; color: rgba(255,255,255,.75); display: flex; gap: 8px; }
+      .whatsappHandle strong { color: white; font-weight: 600; text-transform: none; }
+      .footerMeta { margin-top: auto; border-top: 1px solid rgba(255,255,255,.35); padding-top: 25px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.68); text-transform: uppercase; letter-spacing: .1em; }
+
+      .reveal { animation: rise .8s both cubic-bezier(.2,.7,.2,1); }
+      .delay1 { animation-delay: .08s; }
+      .delay2 { animation-delay: .16s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+      @media (max-width: 900px) {
+        .shell { width: min(100% - 36px, 760px); }
+        .nav { height: 78px; grid-template-columns: 1fr auto; }
+        .navLinks { display: none; }
+        .hero { min-height: 760px; padding-top: 80px; }
+        .hero h1 { font-size: clamp(64px, 14vw, 105px); line-height: .88; }
+        .italicLine { margin-left: 0; }
+        .projectGrid { grid-template-columns: 1fr; }
+        .projectCard { min-height: 550px; }
+        .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
+        .careerStats { grid-template-columns: repeat(2, 1fr); }
+        .careerStats div:nth-child(2) { border-right: 0; }
+        .hobbyGrid { grid-template-columns: repeat(2, 1fr); }
+        .principles { grid-template-columns: 1fr; gap: 10px; }
+        .principles h3 { margin-top: 24px; }
+        .capability { grid-template-columns: 50px 1fr; gap: 8px; }
+        .capability p { grid-column: 2; }
+      }
+
+      @media (max-width: 560px) {
+        .availability { font-size: 10px; }
+        .hero { min-height: 690px; }
+        .hero h1 { margin-top: 26px; font-size: clamp(53px, 16vw, 82px); }
+        .introWithPhoto { gap: 15px; }
+        .introWithPhoto img { width: 68px; height: 68px; }
+        .heroBottom p { font-size: 13px; max-width: 250px; }
+        .roundLink { width: 88px; height: 88px; }
+        .roundLink span { right: 16px; bottom: 17px; }
+        .work, .capabilities, .career { padding: 78px 0 90px; }
+        .careerStats strong { font-size: 40px; }
+        .careerStats div { padding: 24px 14px 24px 0; }
+        .careerStats div:not(:first-child) { padding-left: 14px; }
+        .timeline article { grid-template-columns: 75px 1fr; }
+        .careerLinks { flex-direction: column; align-items: flex-start; }
+        .projectCard { padding: 20px; min-height: 500px; }
+        .cardOrb { height: 200px; }
+        .statementInner, .beyondInner { padding: 78px 0 84px; }
+        blockquote { margin: 45px 0 70px; font-size: 48px; }
+        .capability h3 { font-size: 28px; }
+        .hobbyGrid { grid-template-columns: 1fr; }
+        .hobbyCard { min-height: 390px; }
+        footer h2 { font-size: 62px; }
+        .footerInner { min-height: 610px; padding-top: 78px; }
+        .footerMeta { gap: 20px; line-height: 1.5; flex-direction: column; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="monogram" href="#top" aria-label="KRS, back to top">KRS<span class="dot">.</span></a>
+        <div class="navLinks">
+          <a href="#journey">Journey</a>
+          <a href="#about">About</a>
+          <a href="#beyond">Beyond work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="availability" href="#contact"><span class="statusDot"></span> Open to conversations</a>
+      </nav>
+
+      <section class="hero shell" id="top">
+        <div class="eyebrow reveal">Data engineer · AI explorer · visual storyteller</div>
+        <h1 class="reveal delay1">Data, stories &amp;<span class="italicLine">curious detours.</span></h1>
+        <div class="heroBottom reveal delay2">
+          <div class="introWithPhoto">
+            <img src="./srini-ram.jpg" alt="Srinivasan Ramarao" />
+            <p>
+              I'm Srinivasan (KRS) Ramarao, a data and analytics leader with 25+ years of
+              experience, now exploring what becomes possible when GenAI meets real-world
+              systems and human imagination.
+            </p>
+          </div>
+          <a class="roundLink" href="#journey" aria-label="Explore my journey">Explore<br />my journey <span>↓</span></a>
+        </div>
+        <div class="heroRule"></div>
+      </section>
+
+      <section class="career shell" id="journey">
+        <header class="sectionHeader">
+          <span>Professional journey</span>
+          <span class="sectionCount">2000 - now</span>
+        </header>
+        <div class="careerIntro">
+          <h2>Building the data foundations behind ambitious ideas.</h2>
+          <p>
+            From enterprise platforms and multi-terabyte warehouses to modern cloud data and
+            GenAI, my career has been a long practice in learning, scaling, and making complex
+            systems dependable.
+          </p>
+        </div>
+        <div class="careerStats">
+          <div><strong>25+</strong><span>years in data &amp; software</span></div>
+          <div><strong>9.5</strong><span>years at Oracle</span></div>
+          <div><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
+          <div><strong>1.6K+</strong><span>LinkedIn community</span></div>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>Now</span>
+            <div><h3>Staff Designated Support Engineer</h3><p>Snowflake · Data cloud, customer impact, and the next chapter of enterprise AI.</p></div>
+          </article>
+          <article>
+            <span>2016-25</span>
+            <div><h3>Principal to Senior Principal Software Engineer</h3><p>Oracle · Nine and a half years building and leading at enterprise scale.</p></div>
+          </article>
+          <article>
+            <span>Earlier</span>
+            <div><h3>Data engineering &amp; BI leadership</h3><p>Citrix, CSC, Hexaware, Ramco and consulting roles across cloud, warehousing, analytics, and ERP.</p></div>
+          </article>
+        </div>
+        <div class="careerLinks">
+          <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn ↗</a>
+          <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub ↗</a>
+        </div>
+      </section>
+
+      <section class="work shell" id="work">
+        <header class="sectionHeader">
+          <span>What I'm exploring</span>
+          <span class="sectionCount">(03)</span>
+        </header>
+        <div class="projectGrid">
+          <article class="projectCard violet">
+            <div class="cardTop"><span>01</span><span>AI systems</span></div>
+            <div class="cardOrb" aria-hidden="true"><div></div></div>
+            <h2>From open question to working system</h2>
+            <p>I turn ambiguous ideas into practical AI workflows, shaping the experience, connecting the right tools, and making the result genuinely useful.</p>
+            <div class="tagRow"><span>Strategy</span><span>Automation</span><span>Prototyping</span></div>
+          </article>
+          <article class="projectCard coral">
+            <div class="cardTop"><span>02</span><span>Product building</span></div>
+            <div class="cardOrb" aria-hidden="true"><div></div></div>
+            <h2>Interfaces with a point of view</h2>
+            <p>I build clean, modern digital products where structure, interaction, and visual language work as one.</p>
+            <div class="tagRow"><span>Product design</span><span>Frontend</span><span>Systems thinking</span></div>
+          </article>
+          <article class="projectCard lime">
+            <div class="cardTop"><span>03</span><span>Better operations</span></div>
+            <div class="cardOrb" aria-hidden="true"><div></div></div>
+            <h2>Less repetition. More leverage.</h2>
+            <p>I find the manual seams in everyday work and replace them with thoughtful systems that are faster, clearer, and easier to trust.</p>
+            <div class="tagRow"><span>Process design</span><span>Integrations</span><span>Clarity</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="statement" id="about">
+        <div class="shell statementInner">
+          <span class="sectionLabel">How I think</span>
+          <blockquote>"Keep learning. Keep building. Stay curious enough to begin again."</blockquote>
+          <div class="principles">
+            <div><span>01</span><h3>Start with the real problem</h3><p>Look past the request to understand what actually needs to change.</p></div>
+            <div><span>02</span><h3>Make the invisible visible</h3><p>Prototype early so ideas become concrete, discussable, and better.</p></div>
+            <div><span>03</span><h3>Polish what earns it</h3><p>Care deeply about the details that create confidence and momentum.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="beyond" id="beyond">
+        <div class="shell beyondInner">
+          <header class="sectionHeader lightHeader">
+            <span>Beyond the screen</span>
+            <span class="sectionCount">The rest of me</span>
+          </header>
+          <div class="beyondLead">
+            <h2>I follow trails, stories, paws, and wild places.</h2>
+            <p>
+              Technology is part of my life, not the whole of it. The things I do away from a
+              keyboard keep me observant, patient, and open to a better angle.
+            </p>
+          </div>
+          <div class="hobbyGrid">
+            <article class="hobbyCard"><div><span>01</span><span>Hiking</span></div><div class="hobbyMark mark01" aria-hidden="true"></div><h3>The long way up</h3><p>Miles on a trail reset my perspective, one switchback, summit, and quiet view at a time.</p></article>
+            <article class="hobbyCard"><div><span>02</span><span>Filmmaking</span></div><div class="hobbyMark mark02" aria-hidden="true"></div><h3>Life in frames</h3><p>I love turning moments into visual stories: noticing light, pacing emotion, and finding the shot that says more.</p></article>
+            <article class="hobbyCard"><div><span>03</span><span>Dog lover</span></div><div class="hobbyMark mark03" aria-hidden="true"></div><h3>Always a good walk</h3><p>Dogs have a talent for presence, joy, and getting us outside. I'm happily part of their fan club.</p></article>
+            <article class="hobbyCard"><div><span>04</span><span>Nature explorer</span></div><div class="hobbyMark mark04" aria-hidden="true"></div><h3>Curiosity, outdoors</h3><p>Forests, coastlines, mountains, and unfamiliar roads. I'm drawn to places that make the world feel bigger.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities shell">
+        <header class="sectionHeader">
+          <span>What I bring</span>
+          <span class="sectionCount">Capabilities</span>
+        </header>
+        <div class="capabilityList">
+          <div class="capability"><span>01</span><h3>AI &amp; automation</h3><p>Workflows, agents, integrations, rapid experiments</p></div>
+          <div class="capability"><span>02</span><h3>Product thinking</h3><p>Framing, user journeys, feature shaping, prioritization</p></div>
+          <div class="capability"><span>03</span><h3>Design &amp; build</h3><p>Modern interfaces, prototypes, responsive web experiences</p></div>
+          <div class="capability"><span>04</span><h3>Clear communication</h3><p>Narratives, documentation, decision-ready synthesis</p></div>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <div class="shell footerInner">
+          <div class="footerKicker">Have an interesting problem?</div>
+          <h2>Let's make something <em>matter.</em></h2>
+          <a class="contactLink" href="mailto:krs_in@yahoo.com">Start a conversation ↗</a>
+          <div class="socialLinks" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://www.instagram.com/krsrini_" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://www.facebook.com/krsrini" target="_blank" rel="noreferrer">Facebook ↗</a>
+            <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <span class="whatsappHandle">WhatsApp <strong>@krsrini</strong></span>
+          </div>
+          <div class="footerMeta">
+            <span>Based in California · Working everywhere</span>
+            <span>© 2026 Srini Ram</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
