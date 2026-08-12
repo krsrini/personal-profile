@@ -38,8 +38,9 @@ export default function Home() {
           KRS<span className="dot">.</span>
         </a>
         <div className="navLinks">
-          <a href="#work">Work</a>
+          <a href="#journey">Journey</a>
           <a href="#about">About</a>
+          <a href="#beyond">Beyond work</a>
           <a href="#contact">Contact</a>
         </div>
         <a className="availability" href="#contact">
@@ -48,28 +49,68 @@ export default function Home() {
       </nav>
 
       <section className="hero shell" id="top">
-        <div className="eyebrow reveal">Independent builder · AI × product × systems</div>
+        <div className="eyebrow reveal">Data engineer · AI explorer · visual storyteller</div>
         <h1 className="reveal delay1">
-          I make complex ideas
-          <span className="italicLine">feel inevitable.</span>
+          Data, stories &amp;
+          <span className="italicLine">curious detours.</span>
         </h1>
         <div className="heroBottom reveal delay2">
-          <p>
-            I&apos;m Srini Ram—a curious, detail-minded builder working where technology,
-            design, and better ways of working meet.
-          </p>
-          <a className="roundLink" href="#work" aria-label="Explore selected work">
+          <div className="introWithPhoto">
+            <img src="/srini-ram.jpg" alt="Srinivasan Ramarao" />
+            <p>
+              I&apos;m Srinivasan (KRS) Ramarao—a data and analytics leader with 25+ years
+              of experience, now exploring what becomes possible when GenAI meets
+              real-world systems and human imagination.
+            </p>
+          </div>
+          <a className="roundLink" href="#journey" aria-label="Explore my journey">
             Explore
             <br />
-            the work <span>↓</span>
+            my journey <span>↓</span>
           </a>
         </div>
         <div className="heroRule" />
       </section>
 
+      <section className="career shell" id="journey">
+        <header className="sectionHeader">
+          <span>Professional journey</span>
+          <span className="sectionCount">2000 — now</span>
+        </header>
+        <div className="careerIntro">
+          <h2>Building the data foundations behind ambitious ideas.</h2>
+          <p>
+            From enterprise platforms and multi-terabyte warehouses to modern cloud data
+            and GenAI, my career has been a long practice in learning, scaling, and making
+            complex systems dependable.
+          </p>
+        </div>
+        <div className="careerStats">
+          <div><strong>25+</strong><span>years in data &amp; software</span></div>
+          <div><strong>9.5</strong><span>years at Oracle</span></div>
+          <div><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
+          <div><strong>1.6K+</strong><span>LinkedIn community</span></div>
+        </div>
+        <div className="timeline">
+          <article>
+            <span>Now</span><div><h3>Staff Designated Support Engineer</h3><p>Snowflake · Data cloud, customer impact, and the next chapter of enterprise AI.</p></div>
+          </article>
+          <article>
+            <span>2016—25</span><div><h3>Principal → Senior Principal Software Engineer</h3><p>Oracle · Nine and a half years building and leading at enterprise scale.</p></div>
+          </article>
+          <article>
+            <span>Earlier</span><div><h3>Data engineering &amp; BI leadership</h3><p>Citrix, CSC, Hexaware, Ramco and consulting roles across cloud, warehousing, analytics, and ERP.</p></div>
+          </article>
+        </div>
+        <div className="careerLinks">
+          <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn <Arrow /></a>
+          <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub <Arrow /></a>
+        </div>
+      </section>
+
       <section className="work shell" id="work">
         <header className="sectionHeader">
-          <span>Selected directions</span>
+          <span>What I&apos;m exploring</span>
           <span className="sectionCount">(03)</span>
         </header>
         <div className="projectGrid">
@@ -98,8 +139,7 @@ export default function Home() {
         <div className="shell statementInner">
           <span className="sectionLabel">How I think</span>
           <blockquote>
-            “The best work is clear enough to explain, useful enough to keep,
-            and considered enough to feel human.”
+            “Keep learning. Keep building. Stay curious enough to begin again.”
           </blockquote>
           <div className="principles">
             <div>
@@ -117,6 +157,37 @@ export default function Home() {
               <h3>Polish what earns it</h3>
               <p>Care deeply about the details that create confidence and momentum.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="beyond" id="beyond">
+        <div className="shell beyondInner">
+          <header className="sectionHeader lightHeader">
+            <span>Beyond the screen</span>
+            <span className="sectionCount">The rest of me</span>
+          </header>
+          <div className="beyondLead">
+            <h2>I follow trails, stories, paws, and wild places.</h2>
+            <p>
+              Technology is part of my life, not the whole of it. The things I do away
+              from a keyboard keep me observant, patient, and open to a better angle.
+            </p>
+          </div>
+          <div className="hobbyGrid">
+            {[
+              ["01", "Hiking", "The long way up", "Miles on a trail reset my perspective—one switchback, summit, and quiet view at a time."],
+              ["02", "Filmmaking", "Life in frames", "I love turning moments into visual stories: noticing light, pacing emotion, and finding the shot that says more."],
+              ["03", "Dog lover", "Always a good walk", "Dogs have a talent for presence, joy, and getting us outside. I&apos;m happily part of their fan club."],
+              ["04", "Nature explorer", "Curiosity, outdoors", "Forests, coastlines, mountains, and unfamiliar roads—I&apos;m drawn to places that make the world feel bigger."],
+            ].map(([number, label, title, copy]) => (
+              <article className="hobbyCard" key={number}>
+                <div><span>{number}</span><span>{label}</span></div>
+                <div className={`hobbyMark mark${number}`} aria-hidden="true" />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -149,6 +220,12 @@ export default function Home() {
           <a className="contactLink" href="mailto:krs_in@yahoo.com">
             Start a conversation <Arrow />
           </a>
+          <div className="socialLinks" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
+            <a href="https://www.instagram.com/krsrini_" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
+            <a href="https://www.facebook.com/krsrini" target="_blank" rel="noreferrer">Facebook <Arrow /></a>
+            <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+          </div>
           <div className="footerMeta">
             <span>Based in California · Working everywhere</span>
             <span>© {new Date().getFullYear()} Srini Ram</span>

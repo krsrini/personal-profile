@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
@@ -10,11 +11,22 @@ const serif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-export const metadata: Metadata = {
-  title: "Srini Ram — AI, Product & Systems Builder",
-  description:
-    "Independent builder working across AI, product design, software, and better systems.",
-};
+const title = "Srinivasan (KRS) Ramarao — Data, AI & Visual Stories";
+const description = "Data engineer, analytics leader, GenAI explorer, visual storyteller, hiker, filmmaker, nature explorer, and dog lover.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("host") ?? "krs-builder-profile.krsrini.chatgpt.site";
+  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
+  const origin = `${protocol}://${host}`;
+
+  return {
+    title,
+    description,
+    openGraph: { title, description, type: "website", images: [`${origin}/og.png`] },
+    twitter: { card: "summary_large_image", title, description, images: [`${origin}/og.png`] },
+  };
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

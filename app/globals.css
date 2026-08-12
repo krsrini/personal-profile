@@ -50,7 +50,9 @@ a { color: inherit; text-decoration: none; }
 }
 .italicLine { display: block; margin-left: 13%; font-family: var(--font-serif), serif; font-style: italic; font-weight: 400; letter-spacing: -.05em; color: #7258e8; }
 .heroBottom { margin-top: auto; display: grid; grid-template-columns: 1fr auto; align-items: end; }
-.heroBottom p { max-width: 450px; font-size: 18px; line-height: 1.6; margin: 0; color: #41403d; }
+.introWithPhoto { display: flex; align-items: center; gap: 24px; }
+.introWithPhoto img { width: 92px; height: 92px; object-fit: cover; border-radius: 50%; filter: grayscale(10%); box-shadow: 0 0 0 8px rgba(114,88,232,.1); }
+.heroBottom p { max-width: 550px; font-size: 17px; line-height: 1.6; margin: 0; color: #41403d; }
 .roundLink {
   width: 112px; height: 112px; border-radius: 50%; background: var(--ink); color: white;
   display: flex; align-items: center; justify-content: center; position: relative;
@@ -60,7 +62,7 @@ a { color: inherit; text-decoration: none; }
 .roundLink:hover { transform: rotate(-6deg) scale(1.04); background: #7258e8; }
 .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
 
-.work, .capabilities { padding: 108px 0 126px; }
+.work, .capabilities, .career { padding: 108px 0 126px; }
 .sectionHeader { display: flex; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
 .sectionCount { color: var(--muted); }
 .projectGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
@@ -80,6 +82,24 @@ a { color: inherit; text-decoration: none; }
 .tagRow { display: flex; flex-wrap: wrap; gap: 6px; }
 .tagRow span { border: 1px solid rgba(25,24,24,.35); border-radius: 999px; padding: 7px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
 
+.careerIntro { display: grid; grid-template-columns: 1.4fr .7fr; gap: 80px; padding: 72px 0 78px; align-items: end; }
+.careerIntro h2, .beyondLead h2 { font-family: var(--font-serif), serif; font-weight: 400; font-size: clamp(52px, 6vw, 88px); line-height: .94; letter-spacing: -.035em; margin: 0; }
+.careerIntro p, .beyondLead p { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0; max-width: 470px; }
+.careerStats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.careerStats div { padding: 35px 20px 34px 0; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+.careerStats div:not(:first-child) { padding-left: 28px; }
+.careerStats div:last-child { border-right: 0; }
+.careerStats strong { font-family: var(--font-serif), serif; font-size: 52px; font-weight: 400; line-height: 1; color: #7258e8; }
+.careerStats span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+.timeline { padding-top: 45px; }
+.timeline article { display: grid; grid-template-columns: 120px 1fr; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.timeline article > span { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.timeline h3 { margin: 0 0 7px; font-size: 20px; letter-spacing: -.02em; }
+.timeline p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.careerLinks { display: flex; gap: 12px; margin-top: 34px; }
+.careerLinks a { border: 1px solid var(--ink); padding: 13px 17px; border-radius: 999px; font-size: 12px; display: flex; gap: 18px; transition: background .2s, color .2s; }
+.careerLinks a:hover { background: var(--ink); color: white; }
+
 .statement { background: var(--ink); color: var(--paper); }
 .statementInner { padding: 110px 0 118px; }
 .sectionLabel { color: #aaa69d; display: block; }
@@ -96,6 +116,24 @@ blockquote { margin: 62px 0 100px; max-width: 1200px; font-family: var(--font-se
 .capability h3 { font-family: var(--font-serif), serif; font-size: 38px; font-weight: 400; letter-spacing: -.02em; margin: 0; }
 .capability p { margin: 0; color: var(--muted); font-size: 14px; }
 
+.beyond { background: #203c36; color: #f3f0e8; }
+.beyondInner { padding: 108px 0 124px; }
+.lightHeader { border-color: rgba(255,255,255,.65); }
+.lightHeader .sectionCount { color: rgba(255,255,255,.55); }
+.beyondLead { display: grid; grid-template-columns: 1.25fr .65fr; gap: 90px; padding: 72px 0 84px; align-items: end; }
+.beyondLead p { color: rgba(255,255,255,.65); }
+.hobbyGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.hobbyCard { min-height: 430px; border: 1px solid rgba(255,255,255,.25); padding: 20px; display: flex; flex-direction: column; overflow: hidden; }
+.hobbyCard > div:first-child { display: flex; justify-content: space-between; font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: rgba(255,255,255,.6); }
+.hobbyMark { height: 145px; width: 145px; margin: 38px auto 25px; background: #d7ff43; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.hobbyCard:hover .hobbyMark { transform: rotate(8deg) scale(1.05); }
+.mark01 { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.mark02 { border-radius: 50%; background: #ffac91; box-shadow: inset 0 0 0 32px #203c36; }
+.mark03 { border-radius: 50% 50% 46% 54%; background: #cbc3ff; transform: rotate(-12deg); }
+.mark04 { clip-path: polygon(50% 0, 92% 25%, 80% 75%, 50% 100%, 20% 75%, 8% 25%); background: #f5c74b; }
+.hobbyCard h3 { font-family: var(--font-serif), serif; font-weight: 400; font-size: 30px; margin: auto 0 10px; }
+.hobbyCard p { margin: 0; color: rgba(255,255,255,.63); font-size: 13px; line-height: 1.55; }
+
 footer { background: #7559e8; color: white; }
 .footerInner { min-height: 690px; padding: 100px 0 34px; display: flex; flex-direction: column; }
 .footerKicker { color: rgba(255,255,255,.62); }
@@ -103,6 +141,9 @@ footer h2 { font-size: clamp(70px, 10vw, 150px); line-height: .82; letter-spacin
 footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
 .contactLink { width: fit-content; border-bottom: 1px solid rgba(255,255,255,.55); padding: 12px 0; font-size: 18px; display: flex; gap: 42px; transition: gap .25s ease; }
 .contactLink:hover { gap: 60px; }
+.socialLinks { display: flex; gap: 26px; margin-top: 36px; }
+.socialLinks a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; color: rgba(255,255,255,.75); }
+.socialLinks a:hover { color: white; }
 .footerMeta { margin-top: auto; border-top: 1px solid rgba(255,255,255,.35); padding-top: 25px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.68); text-transform: uppercase; letter-spacing: .1em; }
 
 .reveal { animation: rise .8s both cubic-bezier(.2,.7,.2,1); }
@@ -119,6 +160,10 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .italicLine { margin-left: 0; }
   .projectGrid { grid-template-columns: 1fr; }
   .projectCard { min-height: 550px; }
+  .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
+  .careerStats { grid-template-columns: repeat(2, 1fr); }
+  .careerStats div:nth-child(2) { border-right: 0; }
+  .hobbyGrid { grid-template-columns: repeat(2, 1fr); }
   .principles { grid-template-columns: 1fr; gap: 10px; }
   .principles h3 { margin-top: 24px; }
   .capability { grid-template-columns: 50px 1fr; gap: 8px; }
@@ -129,15 +174,25 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .availability { font-size: 10px; }
   .hero { min-height: 690px; }
   .hero h1 { margin-top: 26px; font-size: clamp(53px, 16vw, 82px); }
-  .heroBottom p { font-size: 15px; max-width: 245px; }
+  .introWithPhoto { gap: 15px; }
+  .introWithPhoto img { width: 68px; height: 68px; }
+  .heroBottom p { font-size: 13px; max-width: 250px; }
   .roundLink { width: 88px; height: 88px; }
   .roundLink span { right: 16px; bottom: 17px; }
-  .work, .capabilities { padding: 78px 0 90px; }
+  .work, .capabilities, .career { padding: 78px 0 90px; }
+  .careerStats strong { font-size: 40px; }
+  .careerStats div { padding: 24px 14px 24px 0; }
+  .careerStats div:not(:first-child) { padding-left: 14px; }
+  .timeline article { grid-template-columns: 75px 1fr; }
+  .careerLinks { flex-direction: column; align-items: flex-start; }
   .projectCard { padding: 20px; min-height: 500px; }
   .cardOrb { height: 200px; }
   .statementInner { padding: 78px 0 84px; }
   blockquote { margin: 45px 0 70px; font-size: 48px; }
   .capability h3 { font-size: 28px; }
+  .beyondInner { padding: 78px 0 90px; }
+  .hobbyGrid { grid-template-columns: 1fr; }
+  .hobbyCard { min-height: 390px; }
   footer h2 { font-size: 62px; }
   .footerInner { min-height: 610px; padding-top: 78px; }
   .footerMeta { gap: 20px; line-height: 1.5; }
