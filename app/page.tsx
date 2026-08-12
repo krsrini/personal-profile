@@ -225,6 +225,7 @@ export default function Home() {
             <a href="https://www.instagram.com/krsrini_" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
             <a href="https://www.facebook.com/krsrini" target="_blank" rel="noreferrer">Facebook <Arrow /></a>
             <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+            <span className="whatsappHandle">WhatsApp <strong>@krsrini</strong></span>
           </div>
           <div className="footerMeta">
             <span>Based in California · Working everywhere</span>

@@ -144,6 +144,8 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
 .socialLinks { display: flex; gap: 26px; margin-top: 36px; }
 .socialLinks a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; color: rgba(255,255,255,.75); }
 .socialLinks a:hover { color: white; }
+.whatsappHandle { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; color: rgba(255,255,255,.75); display: flex; gap: 8px; }
+.whatsappHandle strong { color: white; font-weight: 600; text-transform: none; }
 .footerMeta { margin-top: auto; border-top: 1px solid rgba(255,255,255,.35); padding-top: 25px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.68); text-transform: uppercase; letter-spacing: .1em; }
 
 .reveal { animation: rise .8s both cubic-bezier(.2,.7,.2,1); }
@@ -196,6 +198,7 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   footer h2 { font-size: 62px; }
   .footerInner { min-height: 610px; padding-top: 78px; }
   .footerMeta { gap: 20px; line-height: 1.5; }
+  .socialLinks { flex-wrap: wrap; row-gap: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
