@@ -32,47 +32,49 @@ const projects = [
 
 const linkedinHighlights = [
   {
-    label: "Article",
-    date: "Feb 24, 2025",
-    title:
-      "Why Did Jake Paul vs. Mike Tyson Buffer, While India vs. Pakistan Streamed Smoothly?",
+    label: "Story",
+    kicker: "Family, memory, and gratitude",
+    title: "I sat on this story for a while",
     description:
-      "A deep-tech look at live streaming infrastructure, CDN strategy, concurrency, and why some global events scale cleanly while others struggle.",
-    href: "https://www.linkedin.com/pulse/why-did-jake-paul-vs-mike-tyson-buffer-while-india-pakistan-kr-pr5vc",
-  },
-  {
-    label: "Article",
-    date: "Jan 27, 2024",
-    title: "Beginner's Blueprint to Machine Learning: Unlocking AI's Potential",
-    description:
-      "A practical beginner-friendly guide to machine learning concepts, project paths, tools, and real-world applications.",
-    href: "https://www.linkedin.com/pulse/beginners-blueprint-machine-learning-unlocking-ais-kr-srinivasan-rq6oc",
+      "A personal reflection about carrying a story long enough to understand what it means, then finally sharing it.",
+    href: "https://www.linkedin.com/posts/krsrini_ive-sat-on-this-story-for-a-while-and-kept-activity-7480312504842354688-MVBr",
   },
   {
     label: "Post",
-    date: "Recent",
+    kicker: "India vs Pakistan · CDN",
+    title: "Why some live streams scale smoothly",
+    description:
+      "A practical look at high-traffic streaming, CDN behavior, and what live events teach us about resilient digital infrastructure.",
+    href: "https://www.linkedin.com/posts/krsrini_indiavspakistan-indiavspakistan-cdn-activity-7299630060204961793-0ugL",
+  },
+  {
+    label: "Post",
+    kicker: "OpenAI · AI chatbot",
     title: "Building a local chatbot with OpenAI API for fun",
     description:
       "A hands-on learning note about tinkering with the OpenAI API, building locally, and learning by making something real.",
-    href: "https://www.linkedin.com/posts/krsrini_openai-ai-chatbot-activity-7368904120189059074-cXmI",
+    href: "https://www.linkedin.com/posts/krsrini_openai-ai-chatbot-ugcPost-7368904065969213443--vfx/",
   },
 ];
 
 const instagramMoments = [
   {
     number: "01",
-    title: "Trail notes",
-    description: "Hiking, quiet views, and the kind of outside time that resets the mind.",
+    title: "Reel one",
+    description: "A recent visual moment from the personal, creative, and nature-explorer side of life.",
+    href: "https://www.instagram.com/reel/Dbi3EUkvimb/",
   },
   {
     number: "02",
-    title: "Frames in motion",
-    description: "Visual storytelling, everyday scenes, and the filmmaker's habit of noticing light.",
+    title: "Reel two",
+    description: "Another frame from the world outside work: movement, mood, and a storyteller's eye.",
+    href: "https://www.instagram.com/reel/Dbiy-07vh-S/",
   },
   {
     number: "03",
-    title: "Nature and good walks",
-    description: "Dogs, open air, and small moments from the nature-explorer side of life.",
+    title: "Reel three",
+    description: "A small window into hiking, nature, dogs, travel, and the visual notes I like to collect.",
+    href: "https://www.instagram.com/reel/DabhedWP7nK/",
   },
 ];
 
@@ -160,9 +162,13 @@ export default function Home() {
             </a>
           </div>
           <div className="writingGrid">
-            {linkedinHighlights.map((item) => (
+            {linkedinHighlights.map((item, index) => (
               <a className="writingCard" href={item.href} target="_blank" rel="noreferrer" key={item.title}>
-                <div><span>{item.label}</span><span>{item.date}</span></div>
+                <div><span>{item.label}</span><span>Top 0{index + 1}</span></div>
+                <div className={`postThumb linkedinThumb thumb${index + 1}`} aria-hidden="true">
+                  <span>LinkedIn</span>
+                </div>
+                <span className="postKicker">{item.kicker}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <span className="readMore">Read on LinkedIn <Arrow /></span>
@@ -262,11 +268,14 @@ export default function Home() {
             </div>
             <div className="instagramGrid">
               {instagramMoments.map((moment) => (
-                <a className="instagramCard" href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer" key={moment.number}>
-                  <span>{moment.number}</span>
+                <a className="instagramCard" href={moment.href} target="_blank" rel="noreferrer" key={moment.number}>
+                  <div className={`reelThumb reel${moment.number}`} aria-hidden="true">
+                    <span>Reel</span>
+                  </div>
+                  <span>Top {moment.number}</span>
                   <h3>{moment.title}</h3>
                   <p>{moment.description}</p>
-                  <em>Open latest posts <Arrow /></em>
+                  <em>Watch on Instagram <Arrow /></em>
                 </a>
               ))}
             </div>
