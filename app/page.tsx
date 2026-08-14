@@ -30,6 +30,52 @@ const projects = [
   },
 ];
 
+const linkedinHighlights = [
+  {
+    label: "Article",
+    date: "Feb 24, 2025",
+    title:
+      "Why Did Jake Paul vs. Mike Tyson Buffer, While India vs. Pakistan Streamed Smoothly?",
+    description:
+      "A deep-tech look at live streaming infrastructure, CDN strategy, concurrency, and why some global events scale cleanly while others struggle.",
+    href: "https://www.linkedin.com/pulse/why-did-jake-paul-vs-mike-tyson-buffer-while-india-pakistan-kr-pr5vc",
+  },
+  {
+    label: "Article",
+    date: "Jan 27, 2024",
+    title: "Beginner's Blueprint to Machine Learning: Unlocking AI's Potential",
+    description:
+      "A practical beginner-friendly guide to machine learning concepts, project paths, tools, and real-world applications.",
+    href: "https://www.linkedin.com/pulse/beginners-blueprint-machine-learning-unlocking-ais-kr-srinivasan-rq6oc",
+  },
+  {
+    label: "Post",
+    date: "Recent",
+    title: "Building a local chatbot with OpenAI API for fun",
+    description:
+      "A hands-on learning note about tinkering with the OpenAI API, building locally, and learning by making something real.",
+    href: "https://www.linkedin.com/posts/krsrini_openai-ai-chatbot-activity-7368904120189059074-cXmI",
+  },
+];
+
+const instagramMoments = [
+  {
+    number: "01",
+    title: "Trail notes",
+    description: "Hiking, quiet views, and the kind of outside time that resets the mind.",
+  },
+  {
+    number: "02",
+    title: "Frames in motion",
+    description: "Visual storytelling, everyday scenes, and the filmmaker's habit of noticing light.",
+  },
+  {
+    number: "03",
+    title: "Nature and good walks",
+    description: "Dogs, open air, and small moments from the nature-explorer side of life.",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -105,6 +151,24 @@ export default function Home() {
         <div className="careerLinks">
           <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn <Arrow /></a>
           <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub <Arrow /></a>
+        </div>
+        <div className="recentWriting">
+          <div className="miniHeader">
+            <span>Recent writing</span>
+            <a href="https://www.linkedin.com/in/krsrini/recent-activity/articles/" target="_blank" rel="noreferrer">
+              More on LinkedIn <Arrow />
+            </a>
+          </div>
+          <div className="writingGrid">
+            {linkedinHighlights.map((item) => (
+              <a className="writingCard" href={item.href} target="_blank" rel="noreferrer" key={item.title}>
+                <div><span>{item.label}</span><span>{item.date}</span></div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="readMore">Read on LinkedIn <Arrow /></span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -188,6 +252,24 @@ export default function Home() {
                 <p>{copy}</p>
               </article>
             ))}
+          </div>
+          <div className="instagramBlock">
+            <div className="miniHeader lightMiniHeader">
+              <span>From Instagram</span>
+              <a href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer">
+                @krsrini_ <Arrow />
+              </a>
+            </div>
+            <div className="instagramGrid">
+              {instagramMoments.map((moment) => (
+                <a className="instagramCard" href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer" key={moment.number}>
+                  <span>{moment.number}</span>
+                  <h3>{moment.title}</h3>
+                  <p>{moment.description}</p>
+                  <em>Open latest posts <Arrow /></em>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -99,6 +99,17 @@ a { color: inherit; text-decoration: none; }
 .careerLinks { display: flex; gap: 12px; margin-top: 34px; }
 .careerLinks a { border: 1px solid var(--ink); padding: 13px 17px; border-radius: 999px; font-size: 12px; display: flex; gap: 18px; transition: background .2s, color .2s; }
 .careerLinks a:hover { background: var(--ink); color: white; }
+.recentWriting { margin-top: 72px; }
+.miniHeader { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ink); padding-top: 20px; text-transform: uppercase; letter-spacing: .13em; font-size: 10px; font-weight: 700; }
+.miniHeader a { display: flex; gap: 8px; color: var(--muted); transition: color .2s ease; }
+.miniHeader a:hover { color: var(--ink); }
+.writingGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+.writingCard { min-height: 300px; border: 1px solid var(--line); padding: 22px; display: flex; flex-direction: column; transition: border-color .2s ease, transform .2s ease; }
+.writingCard:hover { border-color: var(--ink); transform: translateY(-3px); }
+.writingCard > div { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); text-transform: uppercase; letter-spacing: .11em; font-size: 9px; }
+.writingCard h3 { font-family: var(--font-serif), serif; font-size: 32px; font-weight: 400; line-height: 1.05; margin: 42px 0 16px; }
+.writingCard p { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0 0 26px; }
+.readMore { margin-top: auto; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; }
 
 .statement { background: var(--ink); color: var(--paper); }
 .statementInner { padding: 110px 0 118px; }
@@ -133,6 +144,17 @@ blockquote { margin: 62px 0 100px; max-width: 1200px; font-family: var(--font-se
 .mark04 { clip-path: polygon(50% 0, 92% 25%, 80% 75%, 50% 100%, 20% 75%, 8% 25%); background: #f5c74b; }
 .hobbyCard h3 { font-family: var(--font-serif), serif; font-weight: 400; font-size: 30px; margin: auto 0 10px; }
 .hobbyCard p { margin: 0; color: rgba(255,255,255,.63); font-size: 13px; line-height: 1.55; }
+.instagramBlock { margin-top: 70px; }
+.lightMiniHeader { border-color: rgba(255,255,255,.45); }
+.lightMiniHeader a { color: rgba(255,255,255,.62); }
+.lightMiniHeader a:hover { color: white; }
+.instagramGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+.instagramCard { min-height: 315px; padding: 24px; display: flex; flex-direction: column; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); transition: transform .2s ease, background .2s ease; }
+.instagramCard:hover { transform: translateY(-3px); background: rgba(255,255,255,.12); }
+.instagramCard > span { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #203c36; background: #f5c74b; font-size: 11px; font-weight: 700; }
+.instagramCard h3 { font-family: var(--font-serif), serif; font-weight: 400; font-size: 38px; line-height: 1; margin: auto 0 14px; }
+.instagramCard p { margin: 0 0 30px; color: rgba(255,255,255,.66); font-size: 13px; line-height: 1.6; }
+.instagramCard em { color: white; font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
 
 footer { background: #7559e8; color: white; }
 .footerInner { min-height: 690px; padding: 100px 0 34px; display: flex; flex-direction: column; }
@@ -161,6 +183,7 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .hero h1 { font-size: clamp(64px, 14vw, 105px); line-height: .88; }
   .italicLine { margin-left: 0; }
   .projectGrid { grid-template-columns: 1fr; }
+  .writingGrid, .instagramGrid { grid-template-columns: 1fr; }
   .projectCard { min-height: 550px; }
   .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
   .careerStats { grid-template-columns: repeat(2, 1fr); }
@@ -187,6 +210,8 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .careerStats div:not(:first-child) { padding-left: 14px; }
   .timeline article { grid-template-columns: 75px 1fr; }
   .careerLinks { flex-direction: column; align-items: flex-start; }
+  .miniHeader { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .writingCard, .instagramCard { min-height: 280px; }
   .projectCard { padding: 20px; min-height: 500px; }
   .cardOrb { height: 200px; }
   .statementInner { padding: 78px 0 84px; }

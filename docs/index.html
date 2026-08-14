@@ -192,6 +192,34 @@
         transition: background .2s, color .2s;
       }
       .careerLinks a:hover { background: var(--ink); color: white; }
+      .recentWriting { margin-top: 72px; }
+      .miniHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--ink);
+        padding-top: 20px;
+        text-transform: uppercase;
+        letter-spacing: .13em;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .miniHeader a { display: flex; gap: 8px; color: var(--muted); transition: color .2s ease; }
+      .miniHeader a:hover { color: var(--ink); }
+      .writingGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+      .writingCard {
+        min-height: 300px;
+        border: 1px solid var(--line);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        transition: border-color .2s ease, transform .2s ease;
+      }
+      .writingCard:hover { border-color: var(--ink); transform: translateY(-3px); }
+      .writingCard > div { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); text-transform: uppercase; letter-spacing: .11em; font-size: 9px; }
+      .writingCard h3 { font-family: "Instrument Serif", serif; font-size: 32px; font-weight: 400; line-height: 1.05; margin: 42px 0 16px; }
+      .writingCard p { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0 0 26px; }
+      .readMore { margin-top: auto; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; }
 
       .projectGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
       .projectCard {
@@ -258,6 +286,17 @@
       .mark04 { clip-path: polygon(50% 0, 92% 25%, 80% 75%, 50% 100%, 20% 75%, 8% 25%); background: #f5c74b; }
       .hobbyCard h3 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 30px; margin: auto 0 10px; }
       .hobbyCard p { margin: 0; color: rgba(255,255,255,.63); font-size: 13px; line-height: 1.55; }
+      .instagramBlock { margin-top: 70px; }
+      .lightMiniHeader { border-color: rgba(255,255,255,.45); }
+      .lightMiniHeader a { color: rgba(255,255,255,.62); }
+      .lightMiniHeader a:hover { color: white; }
+      .instagramGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+      .instagramCard { min-height: 315px; padding: 24px; display: flex; flex-direction: column; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); transition: transform .2s ease, background .2s ease; }
+      .instagramCard:hover { transform: translateY(-3px); background: rgba(255,255,255,.12); }
+      .instagramCard > span { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #203c36; background: #f5c74b; font-size: 11px; font-weight: 700; }
+      .instagramCard h3 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 38px; line-height: 1; margin: auto 0 14px; }
+      .instagramCard p { margin: 0 0 30px; color: rgba(255,255,255,.66); font-size: 13px; line-height: 1.6; }
+      .instagramCard em { color: white; font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
 
       .capabilityList { margin-top: 24px; }
       .capability { display: grid; grid-template-columns: 80px 1fr 1fr; align-items: center; padding: 29px 4px; border-bottom: 1px solid var(--line); }
@@ -292,6 +331,7 @@
         .hero h1 { font-size: clamp(64px, 14vw, 105px); line-height: .88; }
         .italicLine { margin-left: 0; }
         .projectGrid { grid-template-columns: 1fr; }
+        .writingGrid, .instagramGrid { grid-template-columns: 1fr; }
         .projectCard { min-height: 550px; }
         .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
         .careerStats { grid-template-columns: repeat(2, 1fr); }
@@ -318,6 +358,8 @@
         .careerStats div:not(:first-child) { padding-left: 14px; }
         .timeline article { grid-template-columns: 75px 1fr; }
         .careerLinks { flex-direction: column; align-items: flex-start; }
+        .miniHeader { align-items: flex-start; flex-direction: column; gap: 12px; }
+        .writingCard, .instagramCard { min-height: 280px; }
         .projectCard { padding: 20px; min-height: 500px; }
         .cardOrb { height: 200px; }
         .statementInner, .beyondInner { padding: 78px 0 84px; }
@@ -403,6 +445,32 @@
           <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn ↗</a>
           <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub ↗</a>
         </div>
+        <div class="recentWriting">
+          <div class="miniHeader">
+            <span>Recent writing</span>
+            <a href="https://www.linkedin.com/in/krsrini/recent-activity/articles/" target="_blank" rel="noreferrer">More on LinkedIn ↗</a>
+          </div>
+          <div class="writingGrid">
+            <a class="writingCard" href="https://www.linkedin.com/pulse/why-did-jake-paul-vs-mike-tyson-buffer-while-india-pakistan-kr-pr5vc" target="_blank" rel="noreferrer">
+              <div><span>Article</span><span>Feb 24, 2025</span></div>
+              <h3>Why Did Jake Paul vs. Mike Tyson Buffer, While India vs. Pakistan Streamed Smoothly?</h3>
+              <p>A deep-tech look at live streaming infrastructure, CDN strategy, concurrency, and why some global events scale cleanly while others struggle.</p>
+              <span class="readMore">Read on LinkedIn ↗</span>
+            </a>
+            <a class="writingCard" href="https://www.linkedin.com/pulse/beginners-blueprint-machine-learning-unlocking-ais-kr-srinivasan-rq6oc" target="_blank" rel="noreferrer">
+              <div><span>Article</span><span>Jan 27, 2024</span></div>
+              <h3>Beginner's Blueprint to Machine Learning: Unlocking AI's Potential</h3>
+              <p>A practical beginner-friendly guide to machine learning concepts, project paths, tools, and real-world applications.</p>
+              <span class="readMore">Read on LinkedIn ↗</span>
+            </a>
+            <a class="writingCard" href="https://www.linkedin.com/posts/krsrini_openai-ai-chatbot-activity-7368904120189059074-cXmI" target="_blank" rel="noreferrer">
+              <div><span>Post</span><span>Recent</span></div>
+              <h3>Building a local chatbot with OpenAI API for fun</h3>
+              <p>A hands-on learning note about tinkering with the OpenAI API, building locally, and learning by making something real.</p>
+              <span class="readMore">Read on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="work shell" id="work">
@@ -465,6 +533,17 @@
             <article class="hobbyCard"><div><span>02</span><span>Filmmaking</span></div><div class="hobbyMark mark02" aria-hidden="true"></div><h3>Life in frames</h3><p>I love turning moments into visual stories: noticing light, pacing emotion, and finding the shot that says more.</p></article>
             <article class="hobbyCard"><div><span>03</span><span>Dog lover</span></div><div class="hobbyMark mark03" aria-hidden="true"></div><h3>Always a good walk</h3><p>Dogs have a talent for presence, joy, and getting us outside. I'm happily part of their fan club.</p></article>
             <article class="hobbyCard"><div><span>04</span><span>Nature explorer</span></div><div class="hobbyMark mark04" aria-hidden="true"></div><h3>Curiosity, outdoors</h3><p>Forests, coastlines, mountains, and unfamiliar roads. I'm drawn to places that make the world feel bigger.</p></article>
+          </div>
+          <div class="instagramBlock">
+            <div class="miniHeader lightMiniHeader">
+              <span>From Instagram</span>
+              <a href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer">@krsrini_ ↗</a>
+            </div>
+            <div class="instagramGrid">
+              <a class="instagramCard" href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer"><span>01</span><h3>Trail notes</h3><p>Hiking, quiet views, and the kind of outside time that resets the mind.</p><em>Open latest posts ↗</em></a>
+              <a class="instagramCard" href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer"><span>02</span><h3>Frames in motion</h3><p>Visual storytelling, everyday scenes, and the filmmaker's habit of noticing light.</p><em>Open latest posts ↗</em></a>
+              <a class="instagramCard" href="https://www.instagram.com/krsrini_/" target="_blank" rel="noreferrer"><span>03</span><h3>Nature and good walks</h3><p>Dogs, open air, and small moments from the nature-explorer side of life.</p><em>Open latest posts ↗</em></a>
+            </div>
           </div>
         </div>
       </section>
