@@ -135,10 +135,49 @@
       .roundLink span { position: absolute; right: 23px; bottom: 23px; font-size: 16px; }
       .roundLink:hover { transform: rotate(-6deg) scale(1.04); background: var(--violet); }
       .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
+      .backToTop {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 20;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--ink);
+        color: white;
+        font-size: 18px;
+        box-shadow: 0 14px 40px rgba(25,24,24,.18);
+        transition: transform .2s ease, background .2s ease;
+      }
+      .backToTop:hover { transform: translateY(-3px); background: var(--violet); }
 
       .work, .capabilities, .career { padding: 108px 0 126px; }
       .sectionHeader { display: flex; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
       .sectionCount { color: var(--muted); }
+      .sectionNext { display: flex; justify-content: flex-end; margin-top: 42px; }
+      .nextLink {
+        width: 136px;
+        height: 136px;
+        border-radius: 50%;
+        border: 1px solid var(--ink);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        font-size: 10px;
+        line-height: 1.35;
+        transition: background .25s ease, color .25s ease, transform .25s ease;
+      }
+      .nextLink span { font-size: 17px; letter-spacing: 0; }
+      .nextLink:hover { background: var(--ink); color: white; transform: rotate(-4deg) scale(1.03); }
+      .lightSectionNext .nextLink { border-color: rgba(255,255,255,.7); color: white; }
+      .lightSectionNext .nextLink:hover { background: white; color: #203c36; }
       .careerIntro, .beyondLead {
         display: grid;
         grid-template-columns: 1.4fr .7fr;
@@ -359,6 +398,9 @@
         .heroBottom p { font-size: 13px; max-width: 250px; }
         .roundLink { width: 88px; height: 88px; }
         .roundLink span { right: 16px; bottom: 17px; }
+        .backToTop { width: 42px; height: 42px; right: 14px; bottom: 14px; }
+        .sectionNext { justify-content: flex-start; }
+        .nextLink { width: 108px; height: 108px; font-size: 9px; }
         .work, .capabilities, .career { padding: 78px 0 90px; }
         .careerStats strong { font-size: 40px; }
         .careerStats div { padding: 24px 14px 24px 0; }
@@ -415,6 +457,8 @@
         <div class="heroRule"></div>
       </section>
 
+      <a class="backToTop" href="#top" aria-label="Back to top">↑</a>
+
       <section class="career shell" id="journey">
         <header class="sectionHeader">
           <span>Professional journey</span>
@@ -452,7 +496,10 @@
           <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn ↗</a>
           <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub ↗</a>
         </div>
-        <div class="recentWriting">
+        <div class="sectionNext">
+          <a class="nextLink" href="#recent-writing">Recent writing <span>↓</span></a>
+        </div>
+        <div class="recentWriting" id="recent-writing">
           <div class="miniHeader">
             <span>Recent writing</span>
             <a href="https://www.linkedin.com/in/krsrini/recent-activity/articles/" target="_blank" rel="noreferrer">More on LinkedIn ↗</a>
@@ -482,6 +529,9 @@
               <p>A hands-on learning note about tinkering with the OpenAI API, building locally, and learning by making something real.</p>
               <span class="readMore">Read on LinkedIn ↗</span>
             </a>
+          </div>
+          <div class="sectionNext">
+            <a class="nextLink" href="#work">What I'm exploring <span>↓</span></a>
           </div>
         </div>
       </section>
@@ -513,6 +563,9 @@
             <p>I find the manual seams in everyday work and replace them with thoughtful systems that are faster, clearer, and easier to trust.</p>
             <div class="tagRow"><span>Process design</span><span>Integrations</span><span>Clarity</span></div>
           </article>
+        </div>
+        <div class="sectionNext">
+          <a class="nextLink" href="#beyond">Beyond the screen <span>↓</span></a>
         </div>
       </section>
 
@@ -558,10 +611,13 @@
               <a class="instagramCard" href="https://www.instagram.com/reel/DabhedWP7nK/" target="_blank" rel="noreferrer"><div class="reelThumb"><img src="./social/insta-3.png" alt="Mission Peak rattlesnake Instagram reel screenshot" /></div><span>Top 03</span><h3>Trailside Standoff</h3><p>A rattlesnake and ground squirrel face-off on the Mission Peak trail, nature drama in miniature.</p><em>Watch on Instagram ↗</em></a>
             </div>
           </div>
+          <div class="sectionNext lightSectionNext">
+            <a class="nextLink" href="#capabilities">What I bring <span>↓</span></a>
+          </div>
         </div>
       </section>
 
-      <section class="capabilities shell">
+      <section class="capabilities shell" id="capabilities">
         <header class="sectionHeader">
           <span>What I bring</span>
           <span class="sectionCount">Capabilities</span>
@@ -571,6 +627,9 @@
           <div class="capability"><span>02</span><h3>Product thinking</h3><p>Framing, user journeys, feature shaping, prioritization</p></div>
           <div class="capability"><span>03</span><h3>Design &amp; build</h3><p>Modern interfaces, prototypes, responsive web experiences</p></div>
           <div class="capability"><span>04</span><h3>Clear communication</h3><p>Narratives, documentation, decision-ready synthesis</p></div>
+        </div>
+        <div class="sectionNext">
+          <a class="nextLink" href="#contact">Start a conversation <span>↓</span></a>
         </div>
       </section>
 

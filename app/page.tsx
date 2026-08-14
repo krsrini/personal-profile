@@ -126,6 +126,8 @@ export default function Home() {
         <div className="heroRule" />
       </section>
 
+      <a className="backToTop" href="#top" aria-label="Back to top">↑</a>
+
       <section className="career shell" id="journey">
         <header className="sectionHeader">
           <span>Professional journey</span>
@@ -160,7 +162,12 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/krsrini/" target="_blank" rel="noreferrer">Full experience on LinkedIn <Arrow /></a>
           <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">Projects on GitHub <Arrow /></a>
         </div>
-        <div className="recentWriting">
+        <div className="sectionNext">
+          <a className="nextLink" href="#recent-writing">
+            Recent writing <span>↓</span>
+          </a>
+        </div>
+        <div className="recentWriting" id="recent-writing">
           <div className="miniHeader">
             <span>Recent writing</span>
             <a href="https://www.linkedin.com/in/krsrini/recent-activity/articles/" target="_blank" rel="noreferrer">
@@ -180,6 +187,11 @@ export default function Home() {
                 <span className="readMore">Read on LinkedIn <Arrow /></span>
               </a>
             ))}
+          </div>
+          <div className="sectionNext">
+            <a className="nextLink" href="#work">
+              What I&apos;m exploring <span>↓</span>
+            </a>
           </div>
         </div>
       </section>
@@ -208,6 +220,11 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="sectionNext">
+          <a className="nextLink" href="#beyond">
+            Beyond the screen <span>↓</span>
+          </a>
         </div>
       </section>
 
@@ -286,10 +303,15 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="sectionNext lightSectionNext">
+            <a className="nextLink" href="#capabilities">
+              What I bring <span>↓</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="capabilities shell">
+      <section className="capabilities shell" id="capabilities">
         <header className="sectionHeader">
           <span>What I bring</span>
           <span className="sectionCount">Capabilities</span>
@@ -307,6 +329,11 @@ export default function Home() {
               <p>{detail}</p>
             </div>
           ))}
+        </div>
+        <div className="sectionNext">
+          <a className="nextLink" href="#contact">
+            Start a conversation <span>↓</span>
+          </a>
         </div>
       </section>
 
