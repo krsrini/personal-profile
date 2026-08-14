@@ -117,11 +117,6 @@ export default function Home() {
               real-world systems and human imagination.
             </p>
           </div>
-          <a className="roundLink" href="#journey" aria-label="Explore my journey">
-            Explore
-            <br />
-            my journey <span>↓</span>
-          </a>
         </div>
         <div className="heroRule" />
       </section>

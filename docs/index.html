@@ -103,12 +103,7 @@
         font-weight: 400;
         color: var(--violet);
       }
-      .heroBottom {
-        margin-top: auto;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: end;
-      }
+      .heroBottom { margin-top: auto; display: flex; align-items: end; }
       .introWithPhoto { display: flex; align-items: center; gap: 24px; }
       .introWithPhoto img {
         width: 92px;
@@ -118,22 +113,6 @@
         box-shadow: 0 0 0 8px rgba(114, 88, 232, .1);
       }
       .heroBottom p { max-width: 550px; font-size: 17px; line-height: 1.6; margin: 0; color: #41403d; }
-      .roundLink {
-        width: 112px;
-        height: 112px;
-        border-radius: 50%;
-        background: var(--ink);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        font-size: 12px;
-        line-height: 1.25;
-        transition: transform .3s ease, background .3s ease;
-      }
-      .roundLink span { position: absolute; right: 23px; bottom: 23px; font-size: 16px; }
-      .roundLink:hover { transform: rotate(-6deg) scale(1.04); background: var(--violet); }
       .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
       .floatingNav {
         position: fixed;
@@ -423,8 +402,6 @@
         .introWithPhoto { gap: 15px; }
         .introWithPhoto img { width: 68px; height: 68px; }
         .heroBottom p { font-size: 13px; max-width: 250px; }
-        .roundLink { width: 88px; height: 88px; }
-        .roundLink span { right: 16px; bottom: 17px; }
         .floatingNav { right: 14px; bottom: 14px; gap: 8px; }
         .backToTop { width: 42px; height: 42px; }
         .floatingNext { width: 86px; height: 86px; font-size: 8px; }
@@ -480,7 +457,6 @@
               systems and human imagination.
             </p>
           </div>
-          <a class="roundLink" href="#journey" aria-label="Explore my journey">Explore<br />my journey <span>↓</span></a>
         </div>
         <div class="heroRule"></div>
       </section>

@@ -49,17 +49,10 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -.075em; font-weight: 570; max-width: 1280px;
 }
 .italicLine { display: block; margin-left: 13%; font-family: var(--font-serif), serif; font-style: italic; font-weight: 400; letter-spacing: -.05em; color: #7258e8; }
-.heroBottom { margin-top: auto; display: grid; grid-template-columns: 1fr auto; align-items: end; }
+.heroBottom { margin-top: auto; display: flex; align-items: end; }
 .introWithPhoto { display: flex; align-items: center; gap: 24px; }
 .introWithPhoto img { width: 92px; height: 92px; object-fit: cover; border-radius: 50%; filter: grayscale(10%); box-shadow: 0 0 0 8px rgba(114,88,232,.1); }
 .heroBottom p { max-width: 550px; font-size: 17px; line-height: 1.6; margin: 0; color: #41403d; }
-.roundLink {
-  width: 112px; height: 112px; border-radius: 50%; background: var(--ink); color: white;
-  display: flex; align-items: center; justify-content: center; position: relative;
-  font-size: 12px; line-height: 1.25; transition: transform .3s ease, background .3s ease;
-}
-.roundLink span { position: absolute; right: 23px; bottom: 23px; font-size: 16px; }
-.roundLink:hover { transform: rotate(-6deg) scale(1.04); background: #7258e8; }
 .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
 .floatingNav { position: fixed; right: 22px; bottom: 22px; z-index: 20; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .backToTop {
@@ -234,8 +227,6 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .introWithPhoto { gap: 15px; }
   .introWithPhoto img { width: 68px; height: 68px; }
   .heroBottom p { font-size: 13px; max-width: 250px; }
-  .roundLink { width: 88px; height: 88px; }
-  .roundLink span { right: 16px; bottom: 17px; }
   .floatingNav { right: 14px; bottom: 14px; gap: 8px; }
   .backToTop { width: 42px; height: 42px; }
   .floatingNext { width: 86px; height: 86px; font-size: 8px; }
