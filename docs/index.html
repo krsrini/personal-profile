@@ -216,6 +216,21 @@
       .careerStats div:last-child { border-right: 0; }
       .careerStats strong { font-family: "Instrument Serif", serif; font-size: 52px; font-weight: 400; line-height: 1; color: var(--violet); }
       .careerStats span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+      .careerStats .statIcon {
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--ink);
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: none;
+        margin-bottom: 14px;
+      }
       .timeline { padding-top: 45px; }
       .timeline article {
         display: grid;
@@ -387,7 +402,8 @@
         .projectCard { min-height: 550px; }
         .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
         .careerStats { grid-template-columns: repeat(2, 1fr); }
-        .careerStats div:nth-child(2) { border-right: 0; }
+        .careerStats div:nth-child(odd) { padding-left: 0; }
+        .careerStats div:nth-child(even) { padding-left: 28px; border-right: 0; }
         .hobbyGrid { grid-template-columns: repeat(2, 1fr); }
         .principles { grid-template-columns: 1fr; gap: 10px; }
         .principles h3 { margin-top: 24px; }
@@ -409,7 +425,9 @@
         .work, .capabilities, .career { padding: 78px 0 90px; }
         .careerStats strong { font-size: 40px; }
         .careerStats div { padding: 24px 14px 24px 0; }
-        .careerStats div:not(:first-child) { padding-left: 14px; }
+        .careerStats div:nth-child(odd) { padding-left: 0; }
+        .careerStats div:nth-child(even) { padding-left: 18px; }
+        .careerStats .statIcon { width: 30px; height: 30px; font-size: 9px; margin-bottom: 12px; }
         .timeline article { grid-template-columns: 75px 1fr; }
         .careerLinks { flex-direction: column; align-items: flex-start; }
         .miniHeader { align-items: flex-start; flex-direction: column; gap: 12px; }
@@ -508,10 +526,10 @@
           </p>
         </div>
         <div class="careerStats">
-          <div><strong>25+</strong><span>years in data &amp; software</span></div>
-          <div><strong>9.5</strong><span>years at Oracle</span></div>
-          <div><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
-          <div><strong>1.6K+</strong><span>LinkedIn community</span></div>
+          <div><span class="statIcon" aria-hidden="true">DB</span><strong>25+</strong><span>years in data &amp; software</span></div>
+          <div><span class="statIcon" aria-hidden="true">OR</span><strong>9.5</strong><span>years at Oracle</span></div>
+          <div><span class="statIcon" aria-hidden="true">GT</span><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
+          <div><span class="statIcon" aria-hidden="true">in</span><strong>1.6K+</strong><span>LinkedIn community</span></div>
         </div>
         <div class="timeline">
           <article>

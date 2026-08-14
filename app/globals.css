@@ -109,6 +109,11 @@ a { color: inherit; text-decoration: none; }
 .careerStats div:last-child { border-right: 0; }
 .careerStats strong { font-family: var(--font-serif), serif; font-size: 52px; font-weight: 400; line-height: 1; color: #7258e8; }
 .careerStats span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+.careerStats .statIcon {
+  width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%;
+  display: grid; place-items: center; color: var(--ink); font-family: var(--font-sans), sans-serif;
+  font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: none; margin-bottom: 14px;
+}
 .timeline { padding-top: 45px; }
 .timeline article { display: grid; grid-template-columns: 120px 1fr; padding: 26px 0; border-bottom: 1px solid var(--line); }
 .timeline article > span { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
@@ -212,7 +217,8 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .projectCard { min-height: 550px; }
   .careerIntro, .beyondLead { grid-template-columns: 1fr; gap: 28px; }
   .careerStats { grid-template-columns: repeat(2, 1fr); }
-  .careerStats div:nth-child(2) { border-right: 0; }
+  .careerStats div:nth-child(odd) { padding-left: 0; }
+  .careerStats div:nth-child(even) { padding-left: 28px; border-right: 0; }
   .hobbyGrid { grid-template-columns: repeat(2, 1fr); }
   .principles { grid-template-columns: 1fr; gap: 10px; }
   .principles h3 { margin-top: 24px; }
@@ -234,7 +240,9 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
   .work, .capabilities, .career { padding: 78px 0 90px; }
   .careerStats strong { font-size: 40px; }
   .careerStats div { padding: 24px 14px 24px 0; }
-  .careerStats div:not(:first-child) { padding-left: 14px; }
+  .careerStats div:nth-child(odd) { padding-left: 0; }
+  .careerStats div:nth-child(even) { padding-left: 18px; }
+  .careerStats .statIcon { width: 30px; height: 30px; font-size: 9px; margin-bottom: 12px; }
   .timeline article { grid-template-columns: 75px 1fr; }
   .careerLinks { flex-direction: column; align-items: flex-start; }
   .miniHeader { align-items: flex-start; flex-direction: column; gap: 12px; }

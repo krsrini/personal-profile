@@ -175,10 +175,10 @@ export default function Home() {
           </p>
         </div>
         <div className="careerStats">
-          <div><strong>25+</strong><span>years in data &amp; software</span></div>
-          <div><strong>9.5</strong><span>years at Oracle</span></div>
-          <div><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
-          <div><strong>1.6K+</strong><span>LinkedIn community</span></div>
+          <div><span className="statIcon" aria-hidden="true">DB</span><strong>25+</strong><span>years in data &amp; software</span></div>
+          <div><span className="statIcon" aria-hidden="true">OR</span><strong>9.5</strong><span>years at Oracle</span></div>
+          <div><span className="statIcon" aria-hidden="true">GT</span><strong>MS</strong><span>Analytics · Georgia Tech</span></div>
+          <div><span className="statIcon" aria-hidden="true">in</span><strong>1.6K+</strong><span>LinkedIn community</span></div>
         </div>
         <div className="timeline">
           <article>
