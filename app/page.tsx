@@ -38,6 +38,7 @@ const linkedinHighlights = [
     description:
       "A personal reflection about carrying a story long enough to understand what it means, then finally sharing it.",
     href: "https://www.linkedin.com/posts/krsrini_ive-sat-on-this-story-for-a-while-and-kept-activity-7480312504842354688-MVBr",
+    image: "/social/linkedin-1.png",
   },
   {
     label: "Post",
@@ -46,6 +47,7 @@ const linkedinHighlights = [
     description:
       "A practical look at high-traffic streaming, CDN behavior, and what live events teach us about resilient digital infrastructure.",
     href: "https://www.linkedin.com/posts/krsrini_indiavspakistan-indiavspakistan-cdn-activity-7299630060204961793-0ugL",
+    image: "/social/linkedin-2.png",
   },
   {
     label: "Post",
@@ -54,6 +56,7 @@ const linkedinHighlights = [
     description:
       "A hands-on learning note about tinkering with the OpenAI API, building locally, and learning by making something real.",
     href: "https://www.linkedin.com/posts/krsrini_openai-ai-chatbot-ugcPost-7368904065969213443--vfx/",
+    image: "/social/linkedin-3.png",
   },
 ];
 
@@ -63,18 +66,21 @@ const instagramMoments = [
     title: "Reel one",
     description: "A recent visual moment from the personal, creative, and nature-explorer side of life.",
     href: "https://www.instagram.com/reel/Dbi3EUkvimb/",
+    image: "/social/insta-1.png",
   },
   {
     number: "02",
     title: "Reel two",
     description: "Another frame from the world outside work: movement, mood, and a storyteller's eye.",
     href: "https://www.instagram.com/reel/Dbiy-07vh-S/",
+    image: "/social/insta-2.png",
   },
   {
     number: "03",
     title: "Reel three",
     description: "A small window into hiking, nature, dogs, travel, and the visual notes I like to collect.",
     href: "https://www.instagram.com/reel/DabhedWP7nK/",
+    image: "/social/insta-3.png",
   },
 ];
 
@@ -165,8 +171,8 @@ export default function Home() {
             {linkedinHighlights.map((item, index) => (
               <a className="writingCard" href={item.href} target="_blank" rel="noreferrer" key={item.title}>
                 <div><span>{item.label}</span><span>Top 0{index + 1}</span></div>
-                <div className={`postThumb linkedinThumb thumb${index + 1}`} aria-hidden="true">
-                  <span>LinkedIn</span>
+                <div className="postThumb">
+                  <img src={item.image} alt={`${item.title} screenshot`} />
                 </div>
                 <span className="postKicker">{item.kicker}</span>
                 <h3>{item.title}</h3>
@@ -269,8 +275,8 @@ export default function Home() {
             <div className="instagramGrid">
               {instagramMoments.map((moment) => (
                 <a className="instagramCard" href={moment.href} target="_blank" rel="noreferrer" key={moment.number}>
-                  <div className={`reelThumb reel${moment.number}`} aria-hidden="true">
-                    <span>Reel</span>
+                  <div className="reelThumb">
+                    <img src={moment.image} alt={`${moment.title} Instagram screenshot`} />
                   </div>
                   <span>Top {moment.number}</span>
                   <h3>{moment.title}</h3>
