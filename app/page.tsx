@@ -156,6 +156,26 @@ export default function Home() {
               update();
               window.addEventListener('scroll', update, { passive: true });
               window.addEventListener('resize', update);
+
+              const share = document.querySelector('[data-share-page]');
+              if (!share) return;
+              const originalLabel = share.textContent;
+              share.addEventListener('click', async () => {
+                const shareData = {
+                  title: 'Srinivasan (KRS) Ramarao — Data, AI & Visual Stories',
+                  text: 'Personal profile of Srinivasan (KRS) Ramarao.',
+                  url: window.location.href,
+                };
+                try {
+                  if (navigator.share) {
+                    await navigator.share(shareData);
+                  } else if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(window.location.href);
+                    share.textContent = 'Copied link';
+                    window.setTimeout(() => { share.textContent = originalLabel; }, 1800);
+                  }
+                } catch {}
+              });
             })();
           `,
         }}
@@ -382,6 +402,9 @@ export default function Home() {
             <a href="https://www.instagram.com/krsrini_" target="_blank" rel="noreferrer">Instagram <Arrow /></a>
             <a href="https://www.facebook.com/krsrini" target="_blank" rel="noreferrer">Facebook <Arrow /></a>
             <a href="https://github.com/krsrini" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+            <button className="sharePage" type="button" data-share-page>
+              Share page <span aria-hidden="true">↗</span>
+            </button>
             <span className="whatsappHandle">WhatsApp <strong>@krsrini</strong></span>
           </div>
           <div className="footerMeta">

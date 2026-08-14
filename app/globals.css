@@ -194,8 +194,9 @@ footer h2 em { font-family: var(--font-serif), serif; font-weight: 400; }
 .contactLink { width: fit-content; border-bottom: 1px solid rgba(255,255,255,.55); padding: 12px 0; font-size: 18px; display: flex; gap: 42px; transition: gap .25s ease; }
 .contactLink:hover { gap: 60px; }
 .socialLinks { display: flex; gap: 26px; margin-top: 36px; }
-.socialLinks a { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; color: rgba(255,255,255,.75); }
-.socialLinks a:hover { color: white; }
+.socialLinks a, .sharePage { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; display: flex; gap: 8px; color: rgba(255,255,255,.75); }
+.socialLinks a:hover, .sharePage:hover { color: white; }
+.sharePage { border: 0; padding: 0; background: transparent; font: inherit; cursor: pointer; }
 .whatsappHandle { font-size: 12px; text-transform: uppercase; letter-spacing: .11em; color: rgba(255,255,255,.75); display: flex; gap: 8px; }
 .whatsappHandle strong { color: white; font-weight: 600; text-transform: none; }
 .footerMeta { margin-top: auto; border-top: 1px solid rgba(255,255,255,.35); padding-top: 25px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.68); text-transform: uppercase; letter-spacing: .1em; }
