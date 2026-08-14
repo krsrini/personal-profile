@@ -126,7 +126,45 @@ export default function Home() {
         <div className="heroRule" />
       </section>
 
-      <a className="backToTop" href="#top" aria-label="Back to top">↑</a>
+      <div className="floatingNav" aria-label="Page navigation">
+        <a className="floatingNext" href="#journey" data-floating-next>
+          Explore
+          <span>↓</span>
+        </a>
+        <a className="backToTop" href="#top" aria-label="Back to top">↑</a>
+      </div>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (() => {
+              const next = document.querySelector('[data-floating-next]');
+              if (!next) return;
+              const stops = [
+                { id: 'top', label: 'Journey', href: '#journey' },
+                { id: 'journey', label: 'Recent writing', href: '#recent-writing' },
+                { id: 'recent-writing', label: "Exploring", href: '#work' },
+                { id: 'work', label: 'Beyond', href: '#beyond' },
+                { id: 'beyond', label: 'What I bring', href: '#capabilities' },
+                { id: 'capabilities', label: 'Contact', href: '#contact' },
+                { id: 'contact', label: 'Back to top', href: '#top' },
+              ];
+              const update = () => {
+                const y = window.scrollY + window.innerHeight * 0.42;
+                let active = stops[0];
+                for (const stop of stops) {
+                  const el = document.getElementById(stop.id);
+                  if (el && el.offsetTop <= y) active = stop;
+                }
+                next.href = active.href;
+                next.innerHTML = active.label + '<span>' + (active.href === '#top' ? '↑' : '↓') + '</span>';
+              };
+              update();
+              window.addEventListener('scroll', update, { passive: true });
+              window.addEventListener('resize', update);
+            })();
+          `,
+        }}
+      />
 
       <section className="career shell" id="journey">
         <header className="sectionHeader">

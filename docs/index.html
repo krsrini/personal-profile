@@ -135,11 +135,17 @@
       .roundLink span { position: absolute; right: 23px; bottom: 23px; font-size: 16px; }
       .roundLink:hover { transform: rotate(-6deg) scale(1.04); background: var(--violet); }
       .heroRule { border-bottom: 1px solid var(--line); margin-top: 42px; }
-      .backToTop {
+      .floatingNav {
         position: fixed;
         right: 22px;
         bottom: 22px;
         z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .backToTop {
         width: 48px;
         height: 48px;
         border-radius: 50%;
@@ -152,11 +158,32 @@
         transition: transform .2s ease, background .2s ease;
       }
       .backToTop:hover { transform: translateY(-3px); background: var(--violet); }
+      .floatingNext {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .11em;
+        font-size: 9px;
+        line-height: 1.28;
+        box-shadow: 0 14px 40px rgba(25,24,24,.18);
+        transition: transform .2s ease, background .2s ease;
+      }
+      .floatingNext span { font-size: 16px; letter-spacing: 0; }
+      .floatingNext:hover { transform: translateY(-3px) rotate(-4deg); background: var(--violet); }
 
       .work, .capabilities, .career { padding: 108px 0 126px; }
       .sectionHeader { display: flex; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
       .sectionCount { color: var(--muted); }
-      .sectionNext { display: flex; justify-content: flex-end; margin-top: 42px; }
+      .sectionNext { display: none; }
       .nextLink {
         width: 136px;
         height: 136px;
@@ -398,8 +425,9 @@
         .heroBottom p { font-size: 13px; max-width: 250px; }
         .roundLink { width: 88px; height: 88px; }
         .roundLink span { right: 16px; bottom: 17px; }
-        .backToTop { width: 42px; height: 42px; right: 14px; bottom: 14px; }
-        .sectionNext { justify-content: flex-start; }
+        .floatingNav { right: 14px; bottom: 14px; gap: 8px; }
+        .backToTop { width: 42px; height: 42px; }
+        .floatingNext { width: 86px; height: 86px; font-size: 8px; }
         .nextLink { width: 108px; height: 108px; font-size: 9px; }
         .work, .capabilities, .career { padding: 78px 0 90px; }
         .careerStats strong { font-size: 40px; }
@@ -457,7 +485,38 @@
         <div class="heroRule"></div>
       </section>
 
-      <a class="backToTop" href="#top" aria-label="Back to top">↑</a>
+      <div class="floatingNav" aria-label="Page navigation">
+        <a class="floatingNext" href="#journey" data-floating-next>Explore <span>↓</span></a>
+        <a class="backToTop" href="#top" aria-label="Back to top">↑</a>
+      </div>
+      <script>
+        (() => {
+          const next = document.querySelector("[data-floating-next]");
+          if (!next) return;
+          const stops = [
+            { id: "top", label: "Journey", href: "#journey" },
+            { id: "journey", label: "Recent writing", href: "#recent-writing" },
+            { id: "recent-writing", label: "Exploring", href: "#work" },
+            { id: "work", label: "Beyond", href: "#beyond" },
+            { id: "beyond", label: "What I bring", href: "#capabilities" },
+            { id: "capabilities", label: "Contact", href: "#contact" },
+            { id: "contact", label: "Back to top", href: "#top" },
+          ];
+          const update = () => {
+            const y = window.scrollY + window.innerHeight * 0.42;
+            let active = stops[0];
+            for (const stop of stops) {
+              const el = document.getElementById(stop.id);
+              if (el && el.offsetTop <= y) active = stop;
+            }
+            next.href = active.href;
+            next.innerHTML = active.label + "<span>" + (active.href === "#top" ? "↑" : "↓") + "</span>";
+          };
+          update();
+          window.addEventListener("scroll", update, { passive: true });
+          window.addEventListener("resize", update);
+        })();
+      </script>
 
       <section class="career shell" id="journey">
         <header class="sectionHeader">
