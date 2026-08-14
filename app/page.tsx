@@ -63,22 +63,22 @@ const linkedinHighlights = [
 const instagramMoments = [
   {
     number: "01",
-    title: "Reel one",
-    description: "A recent visual moment from the personal, creative, and nature-explorer side of life.",
+    title: "Mission Peak Morning",
+    description: "A recent Mission Peak hike with blue-sky views, steady miles, and a summit-state-of-mind reset.",
     href: "https://www.instagram.com/reel/Dbi3EUkvimb/",
     image: "/social/insta-1.png",
   },
   {
     number: "02",
-    title: "Reel two",
-    description: "Another frame from the world outside work: movement, mood, and a storyteller's eye.",
+    title: "Coyotes Before Sunrise",
+    description: "A quiet trail moment turned wild: coyotes howling near the top before the day fully arrived.",
     href: "https://www.instagram.com/reel/Dbiy-07vh-S/",
     image: "/social/insta-2.png",
   },
   {
     number: "03",
-    title: "Reel three",
-    description: "A small window into hiking, nature, dogs, travel, and the visual notes I like to collect.",
+    title: "Trailside Standoff",
+    description: "A rattlesnake and ground squirrel face-off on the Mission Peak trail, nature drama in miniature.",
     href: "https://www.instagram.com/reel/DabhedWP7nK/",
     image: "/social/insta-3.png",
   },
