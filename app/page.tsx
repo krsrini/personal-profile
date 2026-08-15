@@ -84,6 +84,33 @@ const instagramMoments = [
   },
 ];
 
+const collaborationDoors = [
+  {
+    number: "01",
+    title: "Bring a data / AI problem",
+    description:
+      "Have a messy workflow, support pattern, reporting gap, or automation idea? Send me the puzzle and I’ll help make the first path visible.",
+    href: "mailto:krs_in@yahoo.com?subject=Data%20%2F%20AI%20problem&body=Hi%20KRS%2C%0A%0AI%20have%20a%20data%20%2F%20AI%20problem%20I%27d%20like%20to%20explore%3A%0A",
+    accent: "violet",
+  },
+  {
+    number: "02",
+    title: "Prototype an idea",
+    description:
+      "If you have a rough concept, let’s turn it into something clickable, testable, and easier to explain to the next person.",
+    href: "mailto:krs_in@yahoo.com?subject=Prototype%20an%20idea&body=Hi%20KRS%2C%0A%0AI%20have%20an%20idea%20I%27d%20like%20to%20prototype%3A%0A",
+    accent: "coral",
+  },
+  {
+    number: "03",
+    title: "Talk GenAI & learning",
+    description:
+      "Career pivots, prompt engineering, builders’ curiosity, or what to learn next—start the conversation and we’ll trade notes.",
+    href: "mailto:krs_in@yahoo.com?subject=Learning%20%2F%20GenAI%20conversation&body=Hi%20KRS%2C%0A%0AI%27d%20like%20to%20talk%20about%20GenAI%20%2F%20learning%3A%0A",
+    accent: "lime",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -140,7 +167,8 @@ export default function Home() {
                 { id: 'recent-writing', label: "Exploring", href: '#work' },
                 { id: 'work', label: 'Beyond', href: '#beyond' },
                 { id: 'beyond', label: 'What I bring', href: '#capabilities' },
-                { id: 'capabilities', label: 'Contact', href: '#contact' },
+                { id: 'capabilities', label: 'Build with me', href: '#build-with-me' },
+                { id: 'build-with-me', label: 'Contact', href: '#contact' },
                 { id: 'contact', label: 'Back to top', href: '#top' },
               ];
               const update = () => {
@@ -384,9 +412,50 @@ export default function Home() {
           ))}
         </div>
         <div className="sectionNext">
-          <a className="nextLink" href="#contact">
-            Start a conversation <span>↓</span>
+          <a className="nextLink" href="#build-with-me">
+            Build with me <span>↓</span>
           </a>
+        </div>
+      </section>
+
+      <section className="buildWithMe" id="build-with-me">
+        <div className="shell buildInner">
+          <header className="sectionHeader">
+            <span>Build with me</span>
+            <span className="sectionCount">Pick a door</span>
+          </header>
+          <div className="buildLead">
+            <h2>If something here sparked an idea, choose the next move.</h2>
+            <p>
+              The best conversations usually begin with a half-formed problem, a curious
+              “what if,” or a system that could work better. This is the invitation.
+            </p>
+          </div>
+          <div className="doorGrid">
+            {collaborationDoors.map((door) => (
+              <a className={`doorCard ${door.accent}`} href={door.href} key={door.number}>
+                <div className="doorTop">
+                  <span>{door.number}</span>
+                  <span>Email opener</span>
+                </div>
+                <div className="doorSymbol" aria-hidden="true">
+                  <span />
+                </div>
+                <h3>{door.title}</h3>
+                <p>{door.description}</p>
+                <em>Start this thread <Arrow /></em>
+              </a>
+            ))}
+          </div>
+          <div className="buildNote">
+            <span>Prefer simple?</span>
+            <a href="mailto:krs_in@yahoo.com">Just send a hello <Arrow /></a>
+          </div>
+          <div className="sectionNext">
+            <a className="nextLink" href="#contact">
+              Start a conversation <span>↓</span>
+            </a>
+          </div>
         </div>
       </section>
 
