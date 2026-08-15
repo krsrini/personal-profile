@@ -129,6 +129,14 @@ export default function Home() {
         </a>
       </nav>
 
+      <section className="dailyPulse shell" aria-label="Daily message">
+        <span>Daily spark</span>
+        <p data-daily-message>
+          “Be the change that you wish to see in the world.” — Mahatma Gandhi ·
+          Happy Independence Day, India 🇮🇳
+        </p>
+      </section>
+
       <section className="hero shell" id="top">
         <div className="eyebrow reveal">Data engineer · AI explorer · visual storyteller</div>
         <h1 className="reveal delay1">
@@ -159,6 +167,67 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: `
             (() => {
+              const dailyMessage = document.querySelector('[data-daily-message]');
+              if (dailyMessage) {
+                const specialDays = {
+                  '01-01': 'New year, new trail: build one useful thing, learn one honest lesson, and keep moving forward. ✨',
+                  '01-24': 'Education turns curiosity into capability. Happy International Day of Education.',
+                  '02-11': 'Science gets better when more minds are invited in. International Day of Women and Girls in Science.',
+                  '03-08': 'Celebrate the women who lead, build, teach, question, and make the path wider for everyone. International Women\\'s Day.',
+                  '03-22': 'Small choices become rivers. World Water Day is a reminder to protect what sustains us.',
+                  '04-22': 'The Earth is not a backdrop; it is the story. Happy Earth Day. 🌎',
+                  '05-01': 'Every durable thing is built by human effort. Respect the work, and the worker.',
+                  '06-05': 'Nature keeps the best dashboards: air, water, soil, silence. World Environment Day.',
+                  '06-21': 'Balance is a practice, not a pose. International Yoga Day.',
+                  '07-20': 'One small step still echoes. International Moon Day reminds us to keep reaching.',
+                  '08-12': 'Young minds do not wait for permission to imagine better futures. International Youth Day.',
+                  '08-15': '“Be the change that you wish to see in the world.” — Mahatma Gandhi · Happy Independence Day, India 🇮🇳',
+                  '09-05': 'Generosity is a system too: one thoughtful action can change someone’s day. International Day of Charity.',
+                  '09-21': 'Peace is built in choices, conversations, and courage. International Day of Peace.',
+                  '10-10': 'Strong systems need care. Strong people do too. World Mental Health Day.',
+                  '10-24': 'Progress is a shared project. United Nations Day is a reminder to think beyond borders.',
+                  '12-10': 'Dignity is not a feature request; it is the foundation. Human Rights Day.',
+                };
+                const sparks = [
+                  'Stay curious enough to begin again.',
+                  'Make the invisible visible, then make it useful.',
+                  'A good question can move a whole system.',
+                  'Build the smallest honest version, then learn from it.',
+                  'Clarity is kindness, especially in complex work.',
+                  'Follow the signal, not the noise.',
+                  'Let the trail teach patience; let the work teach craft.',
+                  'Every useful system starts as a rough sketch.',
+                  'The best ideas often arrive wearing ordinary clothes.',
+                  'Turn one repeated task into one reusable tool.',
+                  'Look closely. Better angles hide in plain sight.',
+                  'Do the thoughtful thing before the flashy thing.',
+                  'Learn in public, build with care, share what helps.',
+                  'A prototype is a conversation starter.',
+                  'Small improvements compound quietly.',
+                  'Leave the system clearer than you found it.',
+                  'Good design removes one little friction at a time.',
+                  'Data tells a story; wisdom asks if it is the right one.',
+                  'Adventure is attention with better shoes.',
+                  'Make something today that tomorrow-you can trust.',
+                  'The next chapter usually starts as a detour.',
+                  'Useful beats impressive more often than we admit.',
+                  'Notice the pattern before naming the solution.',
+                  'Momentum loves a first draft.',
+                  'Let curiosity do some of the heavy lifting.',
+                  'Systems scale when people can trust them.',
+                  'There is craft in making complexity feel calm.',
+                  'Start with the real problem.',
+                  'A clear path is often built one switchback at a time.',
+                  'Keep learning. Keep building. Keep walking.',
+                  'Today is a good day to make one thing simpler.',
+                ];
+                const now = new Date();
+                const key = String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+                const start = new Date(now.getFullYear(), 0, 0);
+                const dayOfYear = Math.floor((now - start) / 86400000);
+                dailyMessage.textContent = specialDays[key] || sparks[dayOfYear % sparks.length];
+              }
+
               const next = document.querySelector('[data-floating-next]');
               if (!next) return;
               const stops = [

@@ -86,6 +86,24 @@
         box-shadow: 0 0 0 5px rgba(66, 182, 94, .1);
       }
 
+      .dailyPulse {
+        margin-top: 18px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+      .dailyPulse span {
+        text-transform: uppercase;
+        letter-spacing: .16em;
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--violet);
+      }
+      .dailyPulse p { margin: 0; color: #3f3d38; font-size: 14px; line-height: 1.55; }
+
       .hero {
         padding: 106px 0 36px;
         min-height: calc(100vh - 100px);
@@ -427,6 +445,7 @@
         .shell { width: min(100% - 36px, 760px); }
         .nav { height: 78px; grid-template-columns: 1fr auto; }
         .navLinks { display: none; }
+        .dailyPulse { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
         .hero { min-height: 760px; padding-top: 80px; }
         .hero h1 { font-size: clamp(64px, 14vw, 105px); line-height: .88; }
         .italicLine { margin-left: 0; }
@@ -447,6 +466,8 @@
 
       @media (max-width: 560px) {
         .availability { font-size: 10px; }
+        .dailyPulse { padding: 12px 0; }
+        .dailyPulse p { font-size: 12px; }
         .hero { min-height: 690px; }
         .hero h1 { margin-top: 26px; font-size: clamp(53px, 16vw, 82px); }
         .introWithPhoto { gap: 15px; }
@@ -505,6 +526,11 @@
         <a class="availability" href="#contact"><span class="statusDot"></span> Open to conversations</a>
       </nav>
 
+      <section class="dailyPulse shell" aria-label="Daily message">
+        <span>Daily spark</span>
+        <p data-daily-message>“Be the change that you wish to see in the world.” — Mahatma Gandhi · Happy Independence Day, India 🇮🇳</p>
+      </section>
+
       <section class="hero shell" id="top">
         <div class="eyebrow reveal">Data engineer · AI explorer · visual storyteller</div>
         <h1 class="reveal delay1">Data, stories &amp;<span class="italicLine">curious detours.</span></h1>
@@ -527,6 +553,67 @@
       </div>
       <script>
         (() => {
+          const dailyMessage = document.querySelector("[data-daily-message]");
+          if (dailyMessage) {
+            const specialDays = {
+              "01-01": "New year, new trail: build one useful thing, learn one honest lesson, and keep moving forward. ✨",
+              "01-24": "Education turns curiosity into capability. Happy International Day of Education.",
+              "02-11": "Science gets better when more minds are invited in. International Day of Women and Girls in Science.",
+              "03-08": "Celebrate the women who lead, build, teach, question, and make the path wider for everyone. International Women's Day.",
+              "03-22": "Small choices become rivers. World Water Day is a reminder to protect what sustains us.",
+              "04-22": "The Earth is not a backdrop; it is the story. Happy Earth Day. 🌎",
+              "05-01": "Every durable thing is built by human effort. Respect the work, and the worker.",
+              "06-05": "Nature keeps the best dashboards: air, water, soil, silence. World Environment Day.",
+              "06-21": "Balance is a practice, not a pose. International Yoga Day.",
+              "07-20": "One small step still echoes. International Moon Day reminds us to keep reaching.",
+              "08-12": "Young minds do not wait for permission to imagine better futures. International Youth Day.",
+              "08-15": "“Be the change that you wish to see in the world.” — Mahatma Gandhi · Happy Independence Day, India 🇮🇳",
+              "09-05": "Generosity is a system too: one thoughtful action can change someone’s day. International Day of Charity.",
+              "09-21": "Peace is built in choices, conversations, and courage. International Day of Peace.",
+              "10-10": "Strong systems need care. Strong people do too. World Mental Health Day.",
+              "10-24": "Progress is a shared project. United Nations Day is a reminder to think beyond borders.",
+              "12-10": "Dignity is not a feature request; it is the foundation. Human Rights Day.",
+            };
+            const sparks = [
+              "Stay curious enough to begin again.",
+              "Make the invisible visible, then make it useful.",
+              "A good question can move a whole system.",
+              "Build the smallest honest version, then learn from it.",
+              "Clarity is kindness, especially in complex work.",
+              "Follow the signal, not the noise.",
+              "Let the trail teach patience; let the work teach craft.",
+              "Every useful system starts as a rough sketch.",
+              "The best ideas often arrive wearing ordinary clothes.",
+              "Turn one repeated task into one reusable tool.",
+              "Look closely. Better angles hide in plain sight.",
+              "Do the thoughtful thing before the flashy thing.",
+              "Learn in public, build with care, share what helps.",
+              "A prototype is a conversation starter.",
+              "Small improvements compound quietly.",
+              "Leave the system clearer than you found it.",
+              "Good design removes one little friction at a time.",
+              "Data tells a story; wisdom asks if it is the right one.",
+              "Adventure is attention with better shoes.",
+              "Make something today that tomorrow-you can trust.",
+              "The next chapter usually starts as a detour.",
+              "Useful beats impressive more often than we admit.",
+              "Notice the pattern before naming the solution.",
+              "Momentum loves a first draft.",
+              "Let curiosity do some of the heavy lifting.",
+              "Systems scale when people can trust them.",
+              "There is craft in making complexity feel calm.",
+              "Start with the real problem.",
+              "A clear path is often built one switchback at a time.",
+              "Keep learning. Keep building. Keep walking.",
+              "Today is a good day to make one thing simpler.",
+            ];
+            const now = new Date();
+            const key = String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+            const start = new Date(now.getFullYear(), 0, 0);
+            const dayOfYear = Math.floor((now - start) / 86400000);
+            dailyMessage.textContent = specialDays[key] || sparks[dayOfYear % sparks.length];
+          }
+
           const next = document.querySelector("[data-floating-next]");
           if (!next) return;
           const stops = [
